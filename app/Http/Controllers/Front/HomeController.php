@@ -12,8 +12,5 @@ class HomeController extends Controller
         return inertia('Front/HomePage/Index',);
     }
 
-    public function posts()
-    {
-        return inertia('Front/PostsPage/Posts',);
-    }
+
 }
