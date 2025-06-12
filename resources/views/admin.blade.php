@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="light-style layout-navbar-fixed layout-menu-fixed layout-compact" data-assets-path="{{url('panel/assets/')}}" data-template="vertical-menu-template-starter" data-theme="theme-default" dir="rtl" lang="fa">
+<html class="light-style layout-navbar-fixed " data-assets-path="{{url('panel/assets/')}}" data-template="vertical-menu-template-starter" data-theme="theme-default" dir="rtl" lang="fa">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
