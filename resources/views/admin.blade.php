@@ -1,44 +1,24 @@
 <!DOCTYPE html>
-<html class="light-style layout-navbar-fixed " data-assets-path="{{url('panel/assets/')}}" data-template="vertical-menu-template-starter" data-theme="theme-default" dir="rtl" lang="fa">
+<html lang="fa" dir="rtl">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Laravel-Vue</title>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @inertiaHead
-        <link href="{{url('panel/assets/img/favicon/favicon.ico')}}" rel="icon" type="image/x-icon"/>
-        <link href="{{url('panel/assets/vendor/fonts/tabler-icons.css')}}" rel="stylesheet"/>
-        <!-- <link rel="stylesheet" href="../../assets/vendor/fonts/fontawesome.css" /> -->
-        <!-- <link rel="stylesheet" href="../../assets/vendor/fonts/flag-icons.css" /> -->
-        <!-- Core CSS -->
-        <link class="template-customizer-core-css" href="{{url('panel/assets/vendor/css/rtl/core.css')}}" rel="stylesheet"/>
-        <link class="template-customizer-theme-css" href="{{url('panel/assets/vendor/css/rtl/theme-default.css')}}" rel="stylesheet"/>
-        <link href="{{url('panel/assets/css/demo.css')}}" rel="stylesheet"/>
-        <!-- Vendors CSS -->
-        <link href="{{url('panel/assets/vendor/libs/node-waves/node-waves.css')}}" rel="stylesheet"/>
-        <link href="{{url('panel/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css')}}" rel="stylesheet"/>
-        <!-- Page CSS -->
-        <!-- Helpers -->
-        <script src="{{url('panel/assets/vendor/js/helpers.js')}}"></script>
-        <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
-        <!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
-        <script src="{{url('panel/assets/vendor/js/template-customizer.js')}}"></script>
-        <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-        <script src="{{url('panel/assets/js/config.js')}}"></script>
-        <!-- Better experience of RTL -->
-        <link href="{{url('panel/assets/css/rtl.css')}}" rel="stylesheet"/>
+        <link rel="shortcut icon" href="{{url('panel/assets/media/image/favicon.png')}}">
+        <meta name="theme-color" content="#5867dd">
+        <link rel="stylesheet" href="{{url('panel/vendors/bundle.css')}}" type="text/css">
+        <link rel="stylesheet" href="{{url('panel/vendors/slick/slick.css')}}">
+        <link rel="stylesheet" href="{{url('panel/vendors/slick/slick-theme.css')}}">
+        <link rel="stylesheet" href="{{url('panel/vendors/vmap/jqvmap.min.css')}}">
+        <link rel="stylesheet" href="{{url('panel/assets/css/app.css')}}" type="text/css">
     </head>
-    <body>
+    <body class="small-navigation">
         @inertia
-        <script src="{{url('panel/assets/vendor/libs/jquery/jquery.js')}}"></script>
-        <script src="{{url('panel/assets/vendor/libs/popper/popper.js')}}"></script>
-        <script src="{{url('panel/assets/vendor/js/bootstrap.js')}}"></script>
-        <script src="{{url('panel/assets/vendor/libs/node-waves/node-waves.js')}}"></script>
-        <script src="{{url('panel/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js')}}"></script>
-        <script src="{{url('panel/assets/vendor/libs/hammer/hammer.js')}}"></script>
-        <script src="{{url('panel/assets/vendor/js/menu.js')}}"></script>
-        <!-- Vendors JS -->
-        <!-- Main JS -->
-        <script src="{{url('panel/assets/js/main.js')}}"></script>
+        <script src="{{url('panel/vendors/bundle.js')}}"></script>
+        <script src="{{url('panel/vendors/slick/slick.min.js')}}"></script>
+        <script src="{{url('panel/vendors/vmap/jquery.vmap.min.js')}}"></script>
+        <script src="{{url('panel/assets/js/app.js')}}"></script>
     </body>
 </html>
