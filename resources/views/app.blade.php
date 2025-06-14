@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="fa">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,6 +15,5 @@
         <script src="{{url('front/Js/jquery.min.js')}}"></script>
         <script src="{{url('front/Js/bootstrap.min.js')}}"></script>
         <script src="{{url('front/Js/my-script.js')}}"></script>
-        <script src="{{url('front/Js/custom.js')}}"></script>
     </body>
 </html>

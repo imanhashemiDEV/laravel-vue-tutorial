@@ -5,8 +5,13 @@ import vue from '@vitejs/plugin-vue';
 export default defineConfig({
     plugins: [
         laravel({
-            input: ['resources/css/app.css', 'resources/js/app.js'],
+            input: ['resources/css/front/app.css', 'resources/js/front/app.js'],
             refresh: true,
+            buildDirectory:'front'
+        },{
+            input: ['resources/css/admin/panel.css', 'resources/js/admin/panel.js'],
+            refresh:true,
+            buildDirectory:'panel'
         }),
         tailwindcss(),
         vue({

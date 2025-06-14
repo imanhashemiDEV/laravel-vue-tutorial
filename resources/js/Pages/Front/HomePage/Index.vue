@@ -1,5 +1,4 @@
 <template>
-
       <MainLayout>
           <section class="container mb-4">
               <div class="row">
@@ -191,9 +190,7 @@
               </div>
           </section>
       </MainLayout>
-
 </template>
 <script setup>
 import MainLayout from "@/Pages/Front/MainLayout.vue";
-
 </script>
