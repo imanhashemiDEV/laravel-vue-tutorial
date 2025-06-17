@@ -36,7 +36,10 @@
                                  <span class="cursor-pointer badge badge-success">فعال</span>
                              </td>
                              <td class="text-center align-middle">
-                                 <Link class="btn btn-outline-info" :href="`/admin/edit_user/${user.id}`">
+<!--                                 <Link class="btn btn-outline-info" :href="`/admin/edit_user/${user.id}`">-->
+<!--                                     ویرایش-->
+<!--                                 </Link>-->
+                                 <Link class="btn btn-outline-info" :href="route('users.edit',user.id)">
                                      ویرایش
                                  </Link>
                              </td>

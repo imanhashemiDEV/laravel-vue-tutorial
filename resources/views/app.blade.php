@@ -6,6 +6,7 @@
         <title>Laravel-Vue</title>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @inertiaHead
+        @routes
         <link href="{{url('front/Css/Main.css')}}" rel="stylesheet" />
         <link href="{{url('front/Css/Menu-demo1.css')}}" rel="stylesheet" />
         <link href="{{url('front/Css/Style.css')}}" rel="stylesheet" />

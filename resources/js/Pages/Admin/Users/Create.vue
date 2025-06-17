@@ -50,5 +50,6 @@ const form = useForm({
     'password':null,
 })
 
-const createUser = ()=> form.post('/admin/store_user')
+//const createUser = ()=> form.post('/admin/store_user')
+const createUser = ()=> form.post(route('users.store'))
 </script>

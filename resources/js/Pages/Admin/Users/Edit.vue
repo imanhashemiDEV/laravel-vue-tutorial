@@ -54,5 +54,6 @@ const form = useForm({
     'password':null,
 })
 
-const updateUser = ()=> form.put('/admin/update_user/'+ prop.user.id)
+//const updateUser = ()=> form.put('/admin/update_user/'+ prop.user.id)
+const updateUser = ()=> form.put(route('users.update',prop.user.id))
 </script>

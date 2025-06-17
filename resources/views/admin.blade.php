@@ -6,6 +6,7 @@
         <title>Laravel-Vue</title>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @inertiaHead
+        @routes
         <link rel="shortcut icon" href="{{url('panel/assets/media/image/favicon.png')}}">
         <meta name="theme-color" content="#5867dd">
         <link rel="stylesheet" href="{{url('panel/vendors/bundle.css')}}" type="text/css">
