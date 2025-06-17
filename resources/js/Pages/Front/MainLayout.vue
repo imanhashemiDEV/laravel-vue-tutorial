@@ -12,10 +12,10 @@
                 <div id="of-mobile-nav" class="mobile-menu-wrap">
                     <ul class="mobile-menu">
                         <li class="current-menu-item">
-                            <a href="Index_demo1.html">صفحه اصلی</a>
+                            <Link href="/">صفحه اصلی</Link>
                         </li>
-                        <li><a href="aboutus.html" >درباره ما</a></li>
-                        <li><a href="ContactUs.html" >تماس با ما</a></li>
+                        <li><Link href="/" > درباره ما</Link></li>
+                        <li><Link href="/" > تماس با ما</Link> </li>
                     </ul>
                 </div>
             </div>
@@ -28,15 +28,15 @@
                         <div id="navigation" class="of-drop-down of-main-menu" role="navigation">
                             <ul class="menu">
                                 <li>
-                                    <a href="Index_demo1.html" class="current">
+                                    <a href="/admin" class="current">
                                         <img src="Img/logo-main.png" />
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="Index_demo1.html">صفحه اصلی</a>
+                                    <Link href="">صفحه اصلی</Link>
                                 </li>
-                                <li><a href="aboutus.html" >درباره ما</a></li>
-                                <li><a href="ContactUs.html" >تماس با ما</a></li>
+                                <li><Link href="" >درباره ما</Link></li>
+                                <li><Link href="" >تماس با ما</Link></li>
 
                             </ul>
                         </div>
@@ -108,16 +108,13 @@
                         <h3>لینک های سریع</h3>
                         <ul class="footer-category">
                             <li>
-                                <a href="Index_demo1.html"><i class="fal fa-angle-left ml-2"></i>صفحه اصلی</a>
+                                <a href=""><i class="fal fa-angle-left ml-2"></i>صفحه اصلی</a>
                             </li>
                             <li>
-                                <a href="Service.html"><i class="fal fa-angle-left ml-2"></i>مقالات</a>
+                                <a href=""><i class="fal fa-angle-left ml-2"></i>درباره ما</a>
                             </li>
                             <li>
-                                <a href="aboutus.html"><i class="fal fa-angle-left ml-2"></i>درباره ما</a>
-                            </li>
-                            <li>
-                                <a href="ContactUs.html"><i class="fal fa-angle-left ml-2"></i>تماس با ما</a>
+                                <a href=""><i class="fal fa-angle-left ml-2"></i>تماس با ما</a>
                             </li>
                         </ul>
                     </div>
@@ -132,10 +129,7 @@
                         </form>
                     </div>
                 </div>
-
-
             </div>
-
         </footer>
     </div>
 

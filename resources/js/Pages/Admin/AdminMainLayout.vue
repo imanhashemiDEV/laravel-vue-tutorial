@@ -26,8 +26,8 @@
                 <li>
                     <a href="#">کاربران</a>
                     <ul>
-                        <li><a href="#">ایجاد کاربر</a></li>
-                        <li><a href="#">لیست کاربران</a></li>
+                        <li><a href="/admin/create_user">ایجاد کاربر</a></li>
+                        <li><a href="/admin/users">لیست کاربران</a></li>
                     </ul>
                 </li>
             </ul>
