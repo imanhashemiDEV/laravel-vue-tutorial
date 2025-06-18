@@ -19,6 +19,7 @@
                              <th class="text-center align-middle text-primary">ایمیل</th>
                              <th class="text-center align-middle text-primary"> وضعیت</th>
                              <th class="text-center align-middle text-primary">ویرایش</th>
+                             <th class="text-center align-middle text-primary">حذف</th>
                              <th class="text-center align-middle text-primary">تاریخ ایجاد</th>
                          </tr>
                          </thead>
@@ -41,6 +42,11 @@
 <!--                                 </Link>-->
                                  <Link class="btn btn-outline-info" :href="route('users.edit',user.id)">
                                      ویرایش
+                                 </Link>
+                             </td>
+                             <td class="text-center align-middle">
+                                 <Link method="delete" class="btn btn-outline-danger" :href="route('users.destroy',user.id)">
+                                     حذف
                                  </Link>
                              </td>
                              <td class="text-center align-middle">{{user.created_at}}</td>

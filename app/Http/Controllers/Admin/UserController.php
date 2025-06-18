@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -21,10 +22,11 @@ class UserController extends Controller
         return inertia('Admin/Users/Create');
     }
 
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
         User::create($request->all());
-        return redirect()->to('/admin/users');
+       // return redirect()->to('/admin/users');
+        return redirect()->route('users.index');
     }
 
 
@@ -43,7 +45,13 @@ class UserController extends Controller
             'email'=>$request->email,
             'password'=>$request->password ? \Hash::make($request->password) : $user->password,
         ]);
-        return redirect()->to('/admin/users');
+        return redirect()->route('users.index');
+    }
+
+    public function destroy($id)
+    {
+        User::destroy($id);
+        return redirect()->route('users.index');
     }
 
 
