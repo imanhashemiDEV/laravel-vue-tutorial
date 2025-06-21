@@ -155,6 +155,7 @@
 
     </div>
     <!-- end::header -->
+
     <!-- begin::main content -->
     <slot></slot>
 </template>

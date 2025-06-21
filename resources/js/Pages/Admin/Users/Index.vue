@@ -2,6 +2,10 @@
  <AdminMainLayout>
      <main class="main-content">
          <div class="card">
+             <p class="alert alert-success" v-if="flashMessage">
+                 {{flashMessage}}
+             </p>
+
              <div class="card-body">
                  <div class="table overflow-auto" tabindex="8">
                      <div class="form-group row">
@@ -64,9 +68,14 @@
 </template>
 <script setup>
 import AdminMainLayout from "@/Pages/Admin/AdminMainLayout.vue";
-import {Link} from "@inertiajs/vue3";
+import {Link , usePage } from "@inertiajs/vue3";
+import { computed } from 'vue'
 
 defineProps({
     'users':Array
 })
+
+const page = usePage()
+
+const flashMessage = computed(()=> page.props.flash.success)
 </script>

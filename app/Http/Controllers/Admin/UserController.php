@@ -26,7 +26,7 @@ class UserController extends Controller
     {
         User::create($request->all());
        // return redirect()->to('/admin/users');
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->with('success','کاربر با موفقیت ایجاد شد');
     }
 
 
