@@ -59,31 +59,7 @@
                      </table>
                      <div style="margin: 40px !important;"
                           class="pagination pagination-rounded pagination-sm d-flex justify-content-center">
-                         <ul class="pagination pagination-rounded pagination-sm mb-3">
-                             <li class="page-item disabled" v-if="users.prev_page_url===null">
-                                 <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
-                                     <i class="ti-angle-right"></i>
-                                 </a>
-                             </li>
-                             <li class="page-item" v-if="users.prev_page_url!==null">
-                                 <Link class="page-link" :href="users.prev_page_url" tabindex="-1" aria-disabled="true">
-                                     <i class="ti-angle-right"></i>
-                                 </Link>
-                             </li>
-                             <li v-for="(link,index) in users.links" :key="index" class="page-item" :class="{active:link.active}">
-                                 <Link class="page-link" v-if="link.url !== null && parseInt(link.label)" :href="link.url" v-html="link.label"></Link>
-                             </li>
-                             <li class="page-item disabled" v-if="users.next_page_url===null">
-                                 <a class="page-link" href="#">
-                                     <i class="ti-angle-left"></i>
-                                 </a>
-                             </li>
-                             <li class="page-item" v-if="users.next_page_url!==null">
-                                 <Link class="page-link" :href="users.next_page_url">
-                                     <i class="ti-angle-left"></i>
-                                 </Link>
-                             </li>
-                         </ul>
+                         <Pagination :pagination="users" />
                      </div>
                  </div>
              </div>
@@ -95,6 +71,7 @@
 import AdminMainLayout from "@/Pages/Admin/AdminMainLayout.vue";
 import {Link , usePage } from "@inertiajs/vue3";
 import { computed } from 'vue'
+import Pagination from "@/Pages/Admin/Partials/Pagination.vue";
 
 defineProps({
     'users':Object
