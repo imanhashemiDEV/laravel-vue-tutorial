@@ -13,7 +13,7 @@ class UserController extends Controller
     {
         return inertia('Admin/Users/Index',
             [
-                'users'=>User::query()->get()
+                'users'=>User::query()->paginate(5)
             ]);
     }
 
