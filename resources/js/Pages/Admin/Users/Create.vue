@@ -5,7 +5,7 @@
              <div class="card-body">
                  <div class="container">
                      <h4 class="card-title">ایجاد کاربر</h4>
-                     <form @submit.prevent="createUser">
+                     <form @submit.prevent="createUser" enctype="multipart/form-data">
                          <div class="form-group row">
                              <label  class="col-sm-2 col-form-label">نام و نام خانوادگی</label>
                              <div class="col-sm-10">
@@ -35,7 +35,7 @@
                          </div>
                          <div class="form-group row">
                              <label class="col-sm-2 col-form-label" for="file"> آپلود عکس </label>
-                             <input  class="col-sm-10 form-control-file" type="file" id="file">
+                             <input @input="uploadImage" class="col-sm-10 form-control-file" type="file" id="file">
                          </div>
                          <div class="form-group row">
                              <button type="submit" class="btn btn-success btn-uppercase">
@@ -57,7 +57,12 @@ const form = useForm({
     'name':null,
     'email':null,
     'password':null,
+    'image':null
 })
+
+const uploadImage = (event)=>{
+    form.image = event.target.files[0]
+}
 
 //const createUser = ()=> form.post('/admin/store_user')
 const createUser = ()=> form.post(route('users.store'))

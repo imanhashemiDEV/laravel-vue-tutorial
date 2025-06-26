@@ -5,7 +5,6 @@
              <p class="alert alert-success" v-if="flashMessage">
                  {{flashMessage}}
              </p>
-
              <div class="card-body">
                  <div class="table overflow-auto" tabindex="8">
                      <div class="form-group row">
@@ -32,7 +31,7 @@
                              <td class="text-center align-middle">{{user.id}}</td>
                              <td class="text-center align-middle">
                                  <figure class="avatar avatar">
-                                     <img src="" class="rounded-circle" alt="image">
+                                     <img :src="user.src" class="rounded-circle" alt="image">
                                  </figure>
                              </td>
                              <td class="text-center align-middle">{{user.name}}</td>
@@ -53,7 +52,7 @@
                                      حذف
                                  </Link>
                              </td>
-                             <td class="text-center align-middle">{{user.created_at}}</td>
+                             <td class="text-center align-middle">{{moment(user.created_at).locale('fa').format('YYYY/MM/DD')}}</td>
                          </tr>
                          </tbody>
                      </table>
@@ -72,6 +71,7 @@ import AdminMainLayout from "@/Pages/Admin/AdminMainLayout.vue";
 import {Link , usePage } from "@inertiajs/vue3";
 import { computed } from 'vue'
 import Pagination from "@/Pages/Admin/Partials/Pagination.vue";
+import moment from 'jalali-moment'
 
 defineProps({
     'users':Object

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -22,9 +23,17 @@ class UserController extends Controller
         return inertia('Admin/Users/Create');
     }
 
-    public function store(UserRequest $request)
+    public function store(Request $request)
     {
-        User::create($request->all());
+        if($request->hasFile('image')){
+            $request->image->store('users', 'public');
+        }
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'image' => $request->image ? $request->image->hashName() : null,
+        ]);
        // return redirect()->to('/admin/users');
         return redirect()->route('users.index')->with('success','کاربر با موفقیت ایجاد شد');
     }
@@ -53,6 +62,4 @@ class UserController extends Controller
         User::destroy($id);
         return redirect()->route('users.index');
     }
-
-
 }
