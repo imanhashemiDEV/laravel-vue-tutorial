@@ -3,63 +3,54 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        return inertia('Admin/Categories/Index',
+            [
+                'categories'=>Category::query()->paginate(5)
+            ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return inertia('Admin/Categories/Create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+
+        Category::create([
+            'title' => $request->title,
+        ]);
+        // return redirect()->to('/admin/users');
+        return redirect()->route('categories.index')->with('success','دسته بندی با موفقیت ایجاد شد');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+
+    public function edit($id)
     {
-        //
+        return inertia('Admin/Categories/Edit',[
+            'category'=>Category::query()->find($id)
+        ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function update($id,Request $request)
     {
-        //
+        $category =Category::query()->find($id);
+        $category->update([
+            'title'=>$request->title,
+        ]);
+        return redirect()->route('categories.index');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function destroy($id)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        Category::destroy($id);
+        return redirect()->route('categories.index');
     }
 }

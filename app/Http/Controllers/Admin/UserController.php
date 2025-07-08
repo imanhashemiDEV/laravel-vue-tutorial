@@ -23,7 +23,7 @@ class UserController extends Controller
         return inertia('Admin/Users/Create');
     }
 
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
         if($request->hasFile('image')){
             $request->image->store('users', 'public');

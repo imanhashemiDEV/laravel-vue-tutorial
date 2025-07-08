@@ -17,48 +17,36 @@
                          <thead class="thead-light">
                          <tr>
                              <th class="text-center align-middle text-primary">ردیف</th>
-                             <th class="text-center align-middle text-primary">عکس</th>
-                             <th class="text-center align-middle text-primary">نام و نام خانوادگی</th>
-                             <th class="text-center align-middle text-primary">ایمیل</th>
-                             <th class="text-center align-middle text-primary"> وضعیت</th>
+                             <th class="text-center align-middle text-primary">عنوان دسته بندی</th>
                              <th class="text-center align-middle text-primary">ویرایش</th>
                              <th class="text-center align-middle text-primary">حذف</th>
                              <th class="text-center align-middle text-primary">تاریخ ایجاد</th>
                          </tr>
                          </thead>
                          <tbody>
-                         <tr v-for="(user,index) in users.data" :key="user.id">
-                             <td class="text-center align-middle">{{user.id}}</td>
+                         <tr v-for="(category,index) in categories.data" :key="category.id">
+                             <td class="text-center align-middle">{{category.id}}</td>
+                             <td class="text-center align-middle">{{category.title}}</td>
                              <td class="text-center align-middle">
-                                 <figure class="avatar avatar">
-                                     <img :src="user.src" class="rounded-circle" alt="image">
-                                 </figure>
-                             </td>
-                             <td class="text-center align-middle">{{user.name}}</td>
-                             <td class="text-center align-middle">{{user.email}}</td>
-                             <td class="text-center align-middle">
-                                 <span class="cursor-pointer badge badge-success">فعال</span>
-                             </td>
-                             <td class="text-center align-middle">
-<!--                                 <Link class="btn btn-outline-info" :href="`/admin/edit_user/${user.id}`">-->
+<!--                                 <Link class="btn btn-outline-info" :href="`/admin/edit_category/${category.id}`">-->
 <!--                                     ویرایش-->
 <!--                                 </Link>-->
-                                 <Link class="btn btn-outline-info" :href="route('users.edit',user.id)">
+                                 <Link class="btn btn-outline-info" :href="route('categories.edit',category.id)">
                                      ویرایش
                                  </Link>
                              </td>
                              <td class="text-center align-middle">
-                                 <Link method="delete" class="btn btn-outline-danger" :href="route('users.destroy',user.id)">
+                                 <Link method="delete" class="btn btn-outline-danger" :href="route('categories.destroy',category.id)">
                                      حذف
                                  </Link>
                              </td>
-                             <td class="text-center align-middle">{{moment(user.created_at).locale('fa').format('YYYY/MM/DD')}}</td>
+                             <td class="text-center align-middle">{{moment(category.created_at).locale('fa').format('YYYY/MM/DD')}}</td>
                          </tr>
                          </tbody>
                      </table>
                      <div style="margin: 40px !important;"
                           class="pagination pagination-rounded pagination-sm d-flex justify-content-center">
-                         <Pagination :pagination="users" />
+                         <Pagination :pagination="categories" />
                      </div>
                  </div>
              </div>
@@ -74,7 +62,7 @@ import Pagination from "@/Pages/Admin/Partials/Pagination.vue";
 import moment from 'jalali-moment'
 
 defineProps({
-    'users':Object
+    'categories':Object
 })
 
 const page = usePage()

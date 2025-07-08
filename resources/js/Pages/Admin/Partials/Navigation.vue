@@ -7,6 +7,11 @@
                         <i class="icon ti-user"></i>
                     </a>
                 </li>
+                <li data-toggle="tooltip" title="دسته بندی ها">
+                    <a href="#categories" title=" دسته بندی ها">
+                        <i class="icon ti-book"></i>
+                    </a>
+                </li>
             </ul>
             <ul>
                 <li data-toggle="tooltip" title="ویرایش پروفایل">
@@ -28,6 +33,15 @@
                     <ul>
                         <li><a :href="route('users.create')">ایجاد کاربر</a></li>
                         <li><a :href="route('users.index')">لیست کاربران</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul id="categories">
+                <li>
+                    <a href="#">دسته بندی ها</a>
+                    <ul>
+                        <li><a :href="route('categories.create')">ایجاد دسته بندی</a></li>
+                        <li><a :href="route('categories.index')">لیست دسته بندی ها</a></li>
                     </ul>
                 </li>
             </ul>
