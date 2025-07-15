@@ -1,5 +1,5 @@
 <template>
-    <ul class="pagination pagination-rounded pagination-sm mb-3">
+    <ul v-if="pagination.total > pagination.per_page" class="pagination pagination-rounded pagination-sm mb-3">
         <li class="page-item disabled" v-if="pagination.prev_page_url===null">
             <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
                 <i class="ti-angle-right"></i>

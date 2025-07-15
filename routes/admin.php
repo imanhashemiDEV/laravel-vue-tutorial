@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\PanelController;
+use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,3 +17,4 @@ Route::put('/update_user/{id}',[UserController::class,'update'])->name('users.up
 Route::delete('/delete_user/{id}',[UserController::class,'destroy'])->name('users.destroy');
 
 Route::resource('/categories', CategoryController::class);
+Route::resource('/posts', PostController::class);
