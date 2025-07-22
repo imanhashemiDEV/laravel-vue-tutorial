@@ -4,32 +4,43 @@
          <div class="card">
              <div class="card-body">
                  <div class="container">
-                     <h4 class="card-title">ایجاد کاربر</h4>
-                     <form @submit.prevent="createUser" enctype="multipart/form-data">
+                     <h4 class="card-title">ایجاد مقاله</h4>
+                     <form @submit.prevent="createPost" enctype="multipart/form-data">
                          <div class="form-group row">
-                             <label  class="col-sm-2 col-form-label">نام و نام خانوادگی</label>
+                             <label  class="col-sm-2 col-form-label">عنوان مقاله</label>
                              <div class="col-sm-10">
-                                 <input v-model="form.name" type="text" class="form-control text-left"  dir="rtl" name="name">
-                                 <p class="text-danger" v-if="form.errors.name">
-                                     {{form.errors.name}}
+                                 <input v-model="form.title" type="text" class="form-control text-left"  dir="rtl" name="name">
+                                 <p class="text-danger" v-if="form.errors.title">
+                                     {{form.errors.title}}
                                  </p>
                              </div>
                          </div>
                          <div class="form-group row">
-                             <label  class="col-sm-2 col-form-label">ایمیل</label>
+                             <label  class="col-sm-2 col-form-label">دسته بندی</label>
                              <div class="col-sm-10">
-                                 <input v-model="form.email" type="text" class="form-control text-left" dir="rtl" name="email" >
-                                 <p class="text-danger" v-if="form.errors.email">
-                                     {{form.errors.email}}
+                                 <select v-model="form.category_id" class="form-control" id="exampleFormControlSelect1">
+                                     <option v-for="category in categories"> {{category.title}}</option>
+                                 </select>
+                                 <p class="text-danger" v-if="form.errors.category_id">
+                                     {{form.errors.category_id}}
                                  </p>
                              </div>
                          </div>
                          <div class="form-group row">
-                             <label  class="col-sm-2 col-form-label">پسورد</label>
+                             <label  class="col-sm-2 col-form-label">توضیحات کوتاه</label>
                              <div class="col-sm-10">
-                                 <input v-model="form.password" type="text" class="form-control text-left" dir="rtl" name="password">
-                                 <p class="text-danger" v-if="form.errors.password">
-                                     {{form.errors.password}}
+                                 <textarea v-model="form.short_description"  class="form-control text-left" dir="rtl"></textarea>
+                                 <p class="text-danger" v-if="form.errors.short_description">
+                                     {{form.errors.short_description}}
+                                 </p>
+                             </div>
+                         </div>
+                         <div class="form-group row">
+                             <label  class="col-sm-2 col-form-label">متن مقاله</label>
+                             <div class="col-sm-10">
+                                 <textarea v-model="form.description"  class="form-control text-left" dir="rtl"></textarea>
+                                 <p class="text-danger" v-if="form.errors.description">
+                                     {{form.errors.description}}
                                  </p>
                              </div>
                          </div>
@@ -53,17 +64,21 @@
 import AdminMainLayout from "@/Pages/Admin/AdminMainLayout.vue";
 import {useForm} from "@inertiajs/vue3";
 
+defineProps({
+    'categories':Array
+})
+
 const form = useForm({
-    'name':null,
-    'email':null,
-    'password':null,
+    'title':null,
+    'category_id':null,
+    'short_description':null,
+    'description':null,
     'image':null
 })
 
 const uploadImage = (event)=>{
     form.image = event.target.files[0]
 }
+const createPost = ()=> form.post(route('posts.store'))
 
-//const createUser = ()=> form.post('/admin/store_user')
-const createUser = ()=> form.post(route('users.store'))
 </script>

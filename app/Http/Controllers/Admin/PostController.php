@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserRequest;
+use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -21,7 +22,9 @@ class PostController extends Controller
 
     public function create()
     {
-        return inertia('Admin/Posts/Create');
+        return inertia('Admin/Posts/Create',[
+            'categories'=>Category::query()->get(),
+        ]);
     }
 
     public function store(UserRequest $request)

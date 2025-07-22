@@ -12,7 +12,7 @@ class CategoryController extends Controller
     {
         return inertia('Admin/Categories/Index',
             [
-                'categories'=>Category::query()->paginate(2)
+                'categories'=>Category::query()->paginate(5)
             ]);
     }
 

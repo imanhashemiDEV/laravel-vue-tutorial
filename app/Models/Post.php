@@ -16,6 +16,8 @@ class Post extends Model
         'description',
     ];
 
+    protected $appends =['src'];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
@@ -24,5 +26,10 @@ class Post extends Model
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function getSrcAttribute()
+    {
+        return asset('images/posts/'. $this->image);
     }
 }
