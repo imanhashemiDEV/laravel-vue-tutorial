@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PostRequest;
 use App\Http\Requests\UserRequest;
 use App\Models\Category;
 use App\Models\Post;
@@ -16,7 +17,7 @@ class PostController extends Controller
     {
         return inertia('Admin/Posts/Index',
             [
-                'posts'=>Post::query()->paginate(5)
+                'posts'=>Post::query()->with('category','user')->paginate(5)
             ]);
     }
 
@@ -27,16 +28,18 @@ class PostController extends Controller
         ]);
     }
 
-    public function store(UserRequest $request)
+    public function store(PostRequest $request)
     {
         if($request->hasFile('image')){
             $request->image->store('posts', 'public');
         }
         Post::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'image' => $request->image ? $request->image->hashName() : null,
+            'title' => $request->title,
+            'category_id' => $request->category_id,
+            'user_id' => 2,
+            'description' => $request->description,
+            'short_description' => $request->short_description,
+            'image' => $request->image->hashName()
         ]);
         return redirect()->route('posts.index')->with('success','پست با موفقیت ایجاد شد');
     }

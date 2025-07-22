@@ -19,7 +19,7 @@
                              <label  class="col-sm-2 col-form-label">دسته بندی</label>
                              <div class="col-sm-10">
                                  <select v-model="form.category_id" class="form-control" id="exampleFormControlSelect1">
-                                     <option v-for="category in categories"> {{category.title}}</option>
+                                     <option v-for="category in categories" :value="category.id">{{category.title}}</option>
                                  </select>
                                  <p class="text-danger" v-if="form.errors.category_id">
                                      {{form.errors.category_id}}

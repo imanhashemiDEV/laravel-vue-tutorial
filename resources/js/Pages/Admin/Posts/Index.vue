@@ -35,8 +35,8 @@
                                  </figure>
                              </td>
                              <td class="text-center align-middle">{{post.title}}</td>
-                             <td class="text-center align-middle">{{post.category_id}}</td>
-                             <td class="text-center align-middle">{{post.user_id}}</td>
+                             <td class="text-center align-middle">{{post.category.title}}</td>
+                             <td class="text-center align-middle">{{post.user.name}}</td>
                              <td class="text-center align-middle">
                                  <Link class="btn btn-outline-info" :href="route('posts.edit',post.id)">
                                      ویرایش
