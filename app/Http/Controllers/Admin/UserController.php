@@ -48,11 +48,16 @@ class UserController extends Controller
 
     public function update($id,Request $request)
     {
+        if($request->hasFile('image')){
+            $request->image->store('users', 'public');
+        }
+
         $user =User::find($id);
         $user->update([
             'name'=>$request->name,
             'email'=>$request->email,
             'password'=>$request->password ? \Hash::make($request->password) : $user->password,
+            'image'=>$request->image ? $request->image->hashName() : null,
         ]);
         return redirect()->route('users.index');
     }

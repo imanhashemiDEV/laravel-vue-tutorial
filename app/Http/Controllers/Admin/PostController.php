@@ -56,19 +56,20 @@ class PostController extends Controller
         if($request->hasFile('image')){
             $request->image->store('posts', 'public');
         }
-        $post =Post::find($id);
+        $post =Post::query()->find($id);
         $post->update([
             'title' => $request->title,
             'category_id' => $request->category_id,
             'description' => $request->description,
             'short_description' => $request->short_description,
+            'image' => $request->image->hashName()
         ]);
         return redirect()->route('posts.index');
     }
 
     public function destroy($id)
     {
-        User::destroy($id);
+        Post::destroy($id);
         return redirect()->route('posts.index');
     }
 }

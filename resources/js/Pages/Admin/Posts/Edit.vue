@@ -52,8 +52,8 @@
                              <input  @input="uploadImage" class="col-sm-10 form-control-file" name="image" type="file" id="file">
                          </div>
                          <div class="form-group row">
-                             <button type="submit" class="btn btn-success btn-uppercase">
-                                 <i class="ti-check-box m-r-5"></i> ذخیره
+                             <button type="submit" class="btn btn-info btn-uppercase">
+                                 <i class="ti-check-box m-r-5"></i> ویرایش
                              </button>
                          </div>
                      </form>
@@ -65,7 +65,7 @@
 </template>
 <script setup>
 import AdminMainLayout from "@/Pages/Admin/AdminMainLayout.vue";
-import {useForm } from "@inertiajs/vue3";
+import {useForm ,router  } from "@inertiajs/vue3";
 
 const prop = defineProps({
     'post':Object,
@@ -84,6 +84,13 @@ const uploadImage = (event)=>{
      form.image = event.target.files[0];
 
 }
-const updatePost = ()=> form.put(route('posts.update',prop.post.id))
+const updatePost = ()=> router.post(route('posts.update',prop.post.id),{
+    _method: 'put',
+    'category_id':form.category_id,
+    'title':form.title,
+    'short_description':form.short_description,
+    'description':form.description,
+    'image':form.image,
+})
 
 </script>

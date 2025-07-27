@@ -3,6 +3,9 @@
      <main class="main-content">
          <div class="card">
              <div class="card-body">
+                 <div class="overflow-hidden d-flex justify-content-center align-items-center">
+                     <img style="height: 200px" :src="user.src" class="rounded-circle" alt="image">
+                 </div>
                  <div class="container">
                      <h4 class="card-title">ویرایش کاربر</h4>
                      <form @submit.prevent="updateUser">
@@ -26,7 +29,7 @@
                          </div>
                          <div class="form-group row">
                              <label class="col-sm-2 col-form-label" for="file"> آپلود عکس </label>
-                             <input  class="col-sm-10 form-control-file" type="file" id="file">
+                             <input @input="uploadImage" class="col-sm-10 form-control-file" type="file" id="file">
                          </div>
                          <div class="form-group row">
                              <button type="submit" class="btn btn-success btn-uppercase">
@@ -42,7 +45,7 @@
 </template>
 <script setup>
 import AdminMainLayout from "@/Pages/Admin/AdminMainLayout.vue";
-import {useForm} from "@inertiajs/vue3";
+import {router, useForm} from "@inertiajs/vue3";
 
 const prop = defineProps({
     'user':Object
@@ -52,8 +55,23 @@ const form = useForm({
     'name':prop.user.name,
     'email':prop.user.email,
     'password':null,
+    'image':null
 })
 
+const uploadImage = (event)=>{
+    form.image = event.target.files[0];
+
+}
+
 //const updateUser = ()=> form.put('/admin/update_user/'+ prop.user.id)
-const updateUser = ()=> form.put(route('users.update',prop.user.id))
+//const updateUser = ()=> form.put(route('users.update',prop.user.id))
+
+const updateUser = ()=> router.post(route('users.update',prop.user.id),{
+    _method: 'put',
+    'name':form.name,
+    'email':form.email,
+    'password':form.password,
+    'image':form.image,
+})
+
 </script>

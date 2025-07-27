@@ -18,4 +18,3 @@ Route::delete('/delete_user/{id}',[UserController::class,'destroy'])->name('user
 
 Route::resource('/categories', CategoryController::class);
 Route::resource('/posts', PostController::class);
-Route::post('/update_post/{id}',[PostController::class,'update2'])->name('postss.update');
