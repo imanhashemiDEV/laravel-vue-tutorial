@@ -4,12 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PostRequest;
-use App\Http\Requests\UserRequest;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 
 class PostController extends Controller
 {
@@ -48,17 +46,22 @@ class PostController extends Controller
     public function edit($id)
     {
         return inertia('Admin/Posts/Edit',[
-            'post'=>Post::query()->find($id)
+            'post'=>Post::query()->find($id),
+            'categories'=>Category::query()->get(),
         ]);
     }
 
     public function update($id,Request $request)
     {
+        if($request->hasFile('image')){
+            $request->image->store('posts', 'public');
+        }
         $post =Post::find($id);
         $post->update([
-            'name'=>$request->name,
-            'email'=>$request->email,
-            'password'=>$request->password ? \Hash::make($request->password) : $post->password,
+            'title' => $request->title,
+            'category_id' => $request->category_id,
+            'description' => $request->description,
+            'short_description' => $request->short_description,
         ]);
         return redirect()->route('posts.index');
     }
