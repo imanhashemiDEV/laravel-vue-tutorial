@@ -4,7 +4,7 @@
                 <div class="row">
                     <div class="col-xl-3 order-xl-0 order-1 mb-3">
                         <Categories/>
-                        <LastArticles/>
+                        <LastPosts/>
                     </div>
                     <div class="col-xl-9  order-xl-1 order-0 mb-3">
                         <div class="card">
@@ -33,6 +33,6 @@
 <script setup>
 
 import MainLayout from "@/Pages/Front/MainLayout.vue";
-import LastArticles from "@/Pages/Front/Partials/LastArticles.vue";
+import LastPosts from "@/Pages/Front/Partials/LastPosts.vue";
 import Categories from "@/Pages/Front/Partials/Categories.vue";
 </script>

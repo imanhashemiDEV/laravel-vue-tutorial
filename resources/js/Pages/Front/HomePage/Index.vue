@@ -3,120 +3,23 @@
           <section class="container mb-4">
               <div class="row">
                   <div class="col-xl-3 order-xl-0 order-1 mb-4">
-                      <Categories/>
-                      <LastArticles/>
+                      <Categories :categories="categories"/>
+                      <LastPosts :last_posts="last_posts"/>
                   </div>
                   <div class="col-xl-9  order-xl-1 order-0 mb-4">
                       <div class="row">
-                          <div class="col-lg-4 col-sm-6 mb-4">
+                          <div v-for="post in posts" :key="post.id" class="col-lg-4 col-sm-6 mb-4">
                               <div class="card">
-                                  <a href="blog_destails.html"><img class="card-img-top" src="Img/blog-post10.jpg" alt="Card image"></a>
+                                  <a href=""><img class="card-img-top" :src="post.src" alt="Card image"></a>
                                   <div class="card-body">
-                                      <h2 class="IRANSans_Bold"><a href="blog_destails.html">پرورش گل و گیاه</a></h2>
-                                      <span class="text-primary fa12 IRANSans_Medium"><a href="#">دسته بندی نشده</a></span>
+                                      <h2 class="IRANSans_Bold"><a href="">{{post.title}}</a></h2>
+                                      <span class="text-primary fa12 IRANSans_Medium"><a href="#">{{post.category.title}}</a></span>
                                       <p>
-                                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان وب و گرافیک است…
+                                          {{post.short_description}}
                                       </p>
                                   </div>
                               </div>
                           </div>
-                          <div class="col-lg-4 col-sm-6 mb-4">
-                              <div class="card">
-                                  <a href="blog_destails.html"><img class="card-img-top" src="Img/blog-post6.jpg" alt="Card image"></a>
-                                  <div class="card-body">
-                                      <h2 class="IRANSans_Bold"><a href="blog_destails.html">آموزش آشپزی با هانا</a></h2>
-                                      <span class="text-primary fa12 IRANSans_Medium"><a href="#">دسته بندی نشده</a></span>
-                                      <p>
-                                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان وب و گرافیک است…
-                                      </p>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-lg-4 col-sm-6 mb-4">
-                              <div class="card">
-                                  <a href="blog_destails.html"><img class="card-img-top" src="Img/blog-post7.jpg" alt="Card image"></a>
-                                  <div class="card-body">
-                                      <h2 class="IRANSans_Bold"><a href="blog_destails.html">بالشتک باحال</a></h2>
-                                      <span class="text-primary fa12 IRANSans_Medium"><a href="#">دسته بندی نشده</a></span>
-                                      <p>
-                                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان وب و گرافیک است…
-                                      </p>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-lg-4 col-sm-6 mb-4">
-                              <div class="card">
-                                  <a href="blog_destails.html"><img class="card-img-top" src="Img/blog-post13.jpg" alt="Card image"></a>
-                                  <div class="card-body">
-                                      <h2 class="IRANSans_Bold"><a href="blog_destails.html">بالشتک باحال</a></h2>
-                                      <span class="text-primary fa12 IRANSans_Medium"><a href="#">دسته بندی نشده</a></span>
-                                      <p>
-                                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان وب و گرافیک است…
-                                      </p>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-lg-4 col-sm-6 mb-4">
-                              <div class="card">
-                                  <a href="blog_destails.html"><img class="card-img-top" src="Img/blog-post5.jpg" alt="Card image"></a>
-                                  <div class="card-body">
-                                      <h2 class="IRANSans_Bold"><a href="blog_destails.html">آموزش آشپزی با هانا</a></h2>
-                                      <span class="text-primary fa12 IRANSans_Medium"><a href="#">دسته بندی نشده</a></span>
-                                      <p>
-                                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان وب و گرافیک است…
-                                      </p>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-lg-4 col-sm-6 mb-4">
-                              <div class="card">
-                                  <a href="blog_destails.html"><img class="card-img-top" src="Img/blog-post11.jpg" alt="Card image"></a>
-                                  <div class="card-body">
-                                      <h2 class="IRANSans_Bold"><a href="blog_destails.html">پرورش گل و گیاه</a></h2>
-                                      <span class="text-primary fa12 IRANSans_Medium"><a href="#">دسته بندی نشده</a></span>
-                                      <p>
-                                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان وب و گرافیک است…
-                                      </p>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-lg-4 col-sm-6 mb-4">
-                              <div class="card">
-                                  <a href="blog_destails.html"><img class="card-img-top" src="Img/blog-post7.jpg" alt="Card image"></a>
-                                  <div class="card-body">
-                                      <h2 class="IRANSans_Bold"><a href="blog_destails.html">بالشتک باحال</a></h2>
-                                      <span class="text-primary fa12 IRANSans_Medium"><a href="#">دسته بندی نشده</a></span>
-                                      <p>
-                                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان وب و گرافیک است…
-                                      </p>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-lg-4 col-sm-6 mb-4">
-                              <div class="card">
-                                  <a href="blog_destails.html"><img class="card-img-top" src="Img/blog-post12.jpg" alt="Card image"></a>
-                                  <div class="card-body">
-                                      <h2 class="IRANSans_Bold"><a href="blog_destails.html">آموزش آشپزی با هانا</a></h2>
-                                      <span class="text-primary fa12 IRANSans_Medium"><a href="#">دسته بندی نشده</a></span>
-                                      <p>
-                                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان وب و گرافیک است…
-                                      </p>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-lg-4 col-sm-6 mb-4">
-                              <div class="card">
-                                  <a href="blog_destails.html"><img class="card-img-top" src="Img/blog-post1.jpg" alt="Card image"></a>
-                                  <div class="card-body">
-                                      <h2 class="IRANSans_Bold"><a href="blog_destails.html">پرورش گل و گیاه</a></h2>
-                                      <span class="text-primary fa12 IRANSans_Medium"><a href="#">دسته بندی نشده</a></span>
-                                      <p>
-                                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان وب و گرافیک است…
-                                      </p>
-                                  </div>
-                              </div>
-                          </div>
-
                       </div>
                       <div class="row mt-3">
                           <div class="col-12 text-center mx-auto">
@@ -139,5 +42,11 @@
 <script setup>
 import MainLayout from "@/Pages/Front/MainLayout.vue";
 import Categories from "@/Pages/Front/Partials/Categories.vue";
-import LastArticles from "@/Pages/Front/Partials/LastArticles.vue";
+import LastPosts from "@/Pages/Front/Partials/LastPosts.vue";
+
+defineProps({
+    'posts':Array,
+    'last_posts':Array,
+    'categories':Array,
+})
 </script>
