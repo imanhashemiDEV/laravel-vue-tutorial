@@ -9,6 +9,6 @@ class PostController extends Controller
 {
     public function post()
     {
-        return inertia('Front/PostsPage/Post',);
+        return inertia('Front/PostPage/Post',);
     }
 }
