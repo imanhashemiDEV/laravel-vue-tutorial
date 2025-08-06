@@ -9,8 +9,8 @@
                   <div class="col-xl-9  order-xl-1 order-0 mb-4">
                       <div class="row">
                           <div v-for="post in posts" :key="post.id" class="col-lg-4 col-sm-6 mb-4">
-                              <div class="card">
-                                  <a href=""><img class="card-img-top" :src="post.src" alt="Card image"></a>
+                              <div class="card" style="height: 350px; overflow: hidden;">
+                                  <a href=""><img style="height: 200px;" class="card-img-top" :src="post.src" alt="Card image"></a>
                                   <div class="card-body">
                                       <h2 class="IRANSans_Bold"><a href="">{{post.title}}</a></h2>
                                       <span class="text-primary fa12 IRANSans_Medium"><a href="#">{{post.category.title}}</a></span>

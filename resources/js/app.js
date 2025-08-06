@@ -1,6 +1,7 @@
 import './bootstrap';
 import { createApp, h } from 'vue'
 import { createInertiaApp } from '@inertiajs/vue3'
+import TextClamp from 'vue3-text-clamp';
 import { ZiggyVue } from 'ziggy-js';
 
 createInertiaApp({

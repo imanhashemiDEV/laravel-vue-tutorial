@@ -18,6 +18,7 @@
     "dependencies": {
         "@inertiajs/vue3": "^2.0.11",
         "jalali-moment": "^3.3.11",
-        "vue-jalali-moment": "^1.0.0"
+        "vue-jalali-moment": "^1.0.0",
+        "vue3-text-clamp": "^0.1.2"
     }
 }
