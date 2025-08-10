@@ -8,7 +8,7 @@
                   </div>
                   <div class="col-xl-9  order-xl-1 order-0 mb-4">
                       <div class="row">
-                          <div v-for="post in posts" :key="post.id" class="col-lg-4 col-sm-6 mb-4">
+                          <div v-for="post in posts.data" :key="post.id" class="col-lg-4 col-sm-6 mb-4">
                               <div class="card" style="height: 350px; overflow: hidden;">
                                   <a href=""><img style="height: 200px;" class="card-img-top" :src="post.src" alt="Card image"></a>
                                   <div class="card-body">
@@ -23,15 +23,7 @@
                       </div>
                       <div class="row mt-3">
                           <div class="col-12 text-center mx-auto">
-                              <ul class="pagination  justify-content-center">
-                                  <li class="page-item"><a class="page-link" href="#">«</a></li>
-                                  <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                  <li class="page-item "><a class="page-link" href="#">2</a></li>
-                                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                  <li class="page-item "><a class="page-link" href="#">4</a></li>
-                                  <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                  <li class="page-item"><a class="page-link" href="#">»</a></li>
-                              </ul>
+                             <Pagination :pagination="posts"/>
                           </div>
                       </div>
                   </div>
@@ -43,9 +35,10 @@
 import MainLayout from "@/Pages/Front/MainLayout.vue";
 import Categories from "@/Pages/Front/Partials/Categories.vue";
 import LastPosts from "@/Pages/Front/Partials/LastPosts.vue";
+import Pagination from "@/Pages/Front/Partials/Pagination.vue";
 
 defineProps({
-    'posts':Array,
+    'posts':Object,
     'last_posts':Array,
     'categories':Array,
 })

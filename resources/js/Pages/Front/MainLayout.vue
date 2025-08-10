@@ -29,7 +29,7 @@
                             <ul class="menu">
                                 <li>
                                     <a href="/admin" class="current">
-                                        <img src="Img/logo-main.png" />
+                                        <img src="http://127.0.0.1:8000/front/Img/logo-main.png" />
                                     </a>
                                 </li>
                                 <li>
