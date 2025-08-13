@@ -12,7 +12,7 @@
                 <div id="of-mobile-nav" class="mobile-menu-wrap">
                     <ul class="mobile-menu">
                         <li class="current-menu-item">
-                            <Link href="/">صفحه اصلی</Link>
+                            <Link :href="route('home')">صفحه اصلی</Link>
                         </li>
                         <li><Link href="/" > درباره ما</Link></li>
                         <li><Link href="/" > تماس با ما</Link> </li>
@@ -33,7 +33,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <Link href="">صفحه اصلی</Link>
+                                    <Link :href="route('home')">صفحه اصلی</Link>
                                 </li>
                                 <li><Link href="" >درباره ما</Link></li>
                                 <li><Link href="" >تماس با ما</Link></li>

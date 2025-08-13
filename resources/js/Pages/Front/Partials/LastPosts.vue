@@ -4,9 +4,9 @@
         <ul class="fa12">
             <li v-for="post in last_posts" :key="post.id">
                 <div class="d-flex flex-row">
-                    <a href="#"><img :src="post.src" /></a>
+                    <Link :href="route('post', post.id)"><img :src="post.src" /></Link>
                     <div class="m-2">
-                        <p><a href="#">{{post.title}}</a></p>
+                        <p><Link :href="route('post', post.id)">{{post.title}}</Link></p>
                         <span>{{moment(post.created_at).locale('fa').format('YYYY/MM/DD')}}</span>
                     </div>
                 </div>
@@ -16,10 +16,9 @@
 </template>
 <script setup>
 import moment from 'jalali-moment'
+import {Link} from "@inertiajs/vue3";
 
 defineProps({
     'last_posts':Array,
 })
 </script>
-
-

@@ -20,7 +20,7 @@
                     </a>
                 </li>
                 <li data-toggle="tooltip" title="خروج">
-                    <a href="login.html" class="go-to-page">
+                    <a href="#" class="go-to-page">
                         <i class="icon ti-power-off"></i>
                     </a>
                 </li>

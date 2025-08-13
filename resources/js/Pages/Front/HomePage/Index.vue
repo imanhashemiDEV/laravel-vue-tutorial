@@ -10,9 +10,9 @@
                       <div class="row">
                           <div v-for="post in posts.data" :key="post.id" class="col-lg-4 col-sm-6 mb-4">
                               <div class="card" style="height: 350px; overflow: hidden;">
-                                  <a href=""><img style="height: 200px;" class="card-img-top" :src="post.src" alt="Card image"></a>
+                                  <Link :href="route('post', post.id)"><img style="height: 200px;" class="card-img-top" :src="post.src" alt="Card image"></Link>
                                   <div class="card-body">
-                                      <h2 class="IRANSans_Bold"><a href="">{{post.title}}</a></h2>
+                                      <h2 class="IRANSans_Bold"><Link :href="route('post', post.id)">{{post.title}}</Link></h2>
                                       <span class="text-primary fa12 IRANSans_Medium"><a href="#">{{post.category.title}}</a></span>
                                       <p>
                                           {{post.short_description}}
@@ -36,6 +36,7 @@ import MainLayout from "@/Pages/Front/MainLayout.vue";
 import Categories from "@/Pages/Front/Partials/Categories.vue";
 import LastPosts from "@/Pages/Front/Partials/LastPosts.vue";
 import Pagination from "@/Pages/Front/Partials/Pagination.vue";
+import {Link} from "@inertiajs/vue3";
 
 defineProps({
     'posts':Object,
